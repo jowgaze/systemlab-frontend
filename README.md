@@ -4,7 +4,15 @@ Front-end para projeto pessoal [Systemlab](https://github.com/jowgaze/systemlab)
 
 Gerado com Angular CLI version 18.1.4.
 
-### Servidor de desenvolvimento
+## ToDo
+- [x] Componentes da tela inicial
+- [x] Página inicial
+- [ ] Componentes da página do supervisor
+- [ ] Página do supervisor
+- [ ] Componentes da página do admin
+- [ ] Página do admin
+
+## Servidor de desenvolvimento
 Após clonar o repositório, execute npm install para instalar as dependências do angular.
 
 Execute ng serve para um servidor de desenvolvimento. Navegue até http://localhost:4200/.
