@@ -1,0 +1,89 @@
+<div
+  id="request-register-modal"
+  tabindex="-1"
+  aria-hidden="true"
+  class="fixed left-0 right-0 top-0 z-50 hidden h-[calc(100%-1rem)] max-h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden md:inset-0"
+>
+  <div class="relative max-h-full w-full max-w-md p-4">
+    <div class="relative rounded-lg bg-white shadow">
+      <div class="flex items-center justify-between rounded-t border-b p-4 md:p-5">
+        <h3 class="text-lg font-semibold text-gray-900">Solicitar Cadastro</h3>
+        <button
+          type="button"
+          class="ms-auto inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900"
+          data-modal-toggle="request-register-modal"
+        >
+          <svg class="h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+          </svg>
+          <span class="sr-only">Close modal</span>
+        </button>
+      </div>
+      <form class="p-4 md:p-5" [formGroup]="requestRegister">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="col-span-2">
+            <label for="name" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Nome</label>
+            <input
+              type="text"
+              formControlName="name"
+              class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900"
+              placeholder="Ex: José da Silva"
+            />
+          </div>
+
+          <div class="col-span-2">
+            <label for="course" class="mb-2 block text-sm font-medium text-gray-900">Curso</label>
+            <input
+              type="text"
+              formControlName="course"
+              class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900"
+              placeholder="Ex: Ciência da Computação"
+            />
+          </div>
+
+          <div class="col-span-2 sm:col-span-1">
+            <label for="registration" class="mb-2 block text-sm font-medium text-gray-900">Matricula</label>
+            <input
+              type="text"
+              formControlName="registration"
+              class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900"
+              placeholder="Ex: 1234567"
+            />
+          </div>
+
+          <div class="col-span-2 sm:col-span-1">
+            <label for="Ingresso" class="mb-2 block text-sm font-medium text-gray-900">Periodo de Ingresso</label>
+            <input
+              type="text"
+              formControlName="entryPeriod"
+              class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900"
+              placeholder="Ex: 2024.2"
+            />
+          </div>
+
+          <div class="col-span-2">
+            <label for="username" class="mb-2 block text-sm font-medium text-gray-900">Nome de Usuário</label>
+            <input
+              type="text"
+              formControlName="username"
+              class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900"
+              placeholder="Ex: josedasilva"
+            />
+          </div>
+
+          <div class="col-span-2">
+            <label for="password" class="mb-2 block text-sm font-medium text-gray-900">Senha</label>
+            <input type="password" formControlName="password" class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900" placeholder="••••••••"/>
+          </div>
+
+          <div class="col-span-2 flex justify-end">
+            <button type="submit" [disabled]="requestRegister.invalid"
+              class="rounded-lg bg-teal-500 px-4 py-2 text-sm font-medium text-white active:hover:bg-teal-600 disabled:opacity-50">
+              Solicitar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
