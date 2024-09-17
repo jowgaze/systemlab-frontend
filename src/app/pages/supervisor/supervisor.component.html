@@ -1,0 +1,55 @@
+<div class="flex h-screen flex-col items-center justify-between">
+  <app-header-loggedin></app-header-loggedin>
+
+  <main class="grid w-screen grow grid-cols-5 grid-rows-5 max-md:grid-rows-4 gap-4 p-4">
+    <div class="col-span-5 flex items-center rounded-lg border-2 px-8 py-4 max-md:text-sm lg:col-span-3 lg:col-start-1 lg:row-span-2 lg:row-start-1">
+      <div class="text-md flex grow justify-center space-x-8 font-extralight text-black max-xl:space-x-4">
+        <div>
+          <p>Nome: <strong class="font-medium">José da Silva</strong></p>
+          <p>Mat.: <strong class="font-medium">1234567</strong></p>
+          <p>Função: <strong class="font-medium">Supervisor</strong></p>
+        </div>
+
+        <div class="flex space-x-8 max-xl:space-x-4 max-md:flex-col max-md:space-x-0">
+          <p>Curso: <strong class="font-medium">Ciência da Computação</strong></p>
+          <p>Ano de Ingresso: <strong class="font-medium">2024.2</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-span-5 row-start-2 flex rounded-lg border-2 px-8 py-4 font-extralight max-md:text-sm lg:col-span-3 lg:row-span-3 lg:row-start-3">
+      <div class="flex grow flex-col justify-around">
+        <div class="mb-2 flex justify-center">
+          <h2 class="text-lg font-medium">Sessão:</h2>
+        </div>
+        <div class="md:flex md:justify-around">
+          <p>Lotação: <strong class="font-medium">Laboratório de Informática</strong></p>
+          <p>Turno: <strong class="font-medium">Manhã</strong></p>
+          <p>Status: <strong class="rounded-md bg-red-500 px-2 pb-1 font-medium text-white">Inativo</strong></p>
+        </div>
+        <div class="mt-4 flex justify-center">
+          <button class="rounded-xl bg-teal-400 px-3 py-1 font-semibold text-white shadow-sm shadow-teal-900 hover:bg-teal-500 active:bg-teal-600">Ativar Sessão</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-span-5 row-span-2 row-start-3 flex flex-col items-center justify-center lg:col-span-2 lg:col-start-4 lg:row-span-5 lg:row-start-1">
+      <div class="h-96 space-y-2 overflow-y-scroll p-4">
+        <app-card-session></app-card-session>
+        <app-card-session></app-card-session>
+        <app-card-session></app-card-session>
+        <app-card-session></app-card-session>
+        <app-card-session></app-card-session>
+        <app-card-session></app-card-session>
+        <app-card-session></app-card-session>
+        <app-card-session></app-card-session>
+        <app-card-session></app-card-session>
+        <app-card-session></app-card-session>
+        <app-card-session></app-card-session>
+        <app-card-session></app-card-session>
+        <app-card-session></app-card-session>
+      </div>
+    </div>
+  </main>
+  <app-footer></app-footer>
+</div>
