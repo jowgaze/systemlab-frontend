@@ -7,8 +7,8 @@ Gerado com Angular CLI version 18.1.4.
 ## ToDo
 - [x] Componentes da tela inicial
 - [x] Página inicial
-- [ ] Componentes da página do supervisor
-- [ ] Página do supervisor
+- [x] Componentes da página do supervisor
+- [x] Página do supervisor
 - [ ] Componentes da página do admin
 - [ ] Página do admin
 
