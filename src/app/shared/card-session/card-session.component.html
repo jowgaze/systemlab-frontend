@@ -1,8 +1,13 @@
-<button data-modal-target="session-info-modal" data-modal-toggle="session-info-modal" class="flex h-14 w-96 max-md:max-w-xs items-center px-4 justify-between shadow-sm shadow-slate-300 rounded-md">
+<button
+  [attr.data-modal-target]="'session-'+session.id"
+  [attr.data-modal-toggle]="'session-'+session.id"
+
+  class="flex h-14 w-96 items-center justify-between rounded-md px-4 shadow-sm shadow-slate-300 max-md:max-w-xs"
+>
   <div class="flex items-center space-x-2">
     <div class="size-2 rounded-full" [ngClass]="colorStatus"></div>
-    <p class="font-medium">Laboratório de Informatica</p>
+    <p class="font-medium">{{ session.laboratory }}</p>
   </div>
 </button>
 
-<app-modal-session-info></app-modal-session-info>
+<app-modal-session-info [session]="session"></app-modal-session-info>
