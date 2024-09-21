@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../../core/services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header-loggedin',
@@ -9,4 +11,10 @@ import { Component } from '@angular/core';
 })
 export class HeaderLoggedinComponent {
 
+  constructor(private authService: AuthService, private router: Router) { }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/']);
+  }
 }
