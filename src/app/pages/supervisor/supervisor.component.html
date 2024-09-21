@@ -1,38 +1,40 @@
 <div class="flex h-screen flex-col items-center justify-between">
   <app-header-loggedin></app-header-loggedin>
   <div class="text-md max-md: flex w-screen justify-center space-x-8 bg-teal-500 px-8 pb-4 font-extralight text-white max-xl:space-x-4 max-md:flex-col max-md:space-x-0">
-    <p>Nome: <strong class="font-medium">José da Silva</strong></p>
-    <p class="max-lg:hidden max-md:inline">Mat.: <strong class="font-medium">1234567</strong></p>
-    <p>Função: <strong class="font-medium">Supervisor</strong></p>
-    <p>Curso: <strong class="font-medium">Ciência da Computação</strong></p>
-    <p>Ano de Ingresso: <strong class="font-medium">2024.2</strong></p>
+    <p>
+      Nome: <strong class="font-medium">{{ supervisor.name }}</strong>
+    </p>
+    <p class="max-lg:hidden max-md:inline">
+      Mat.: <strong class="font-medium">{{ supervisor.registration }}</strong>
+    </p>
+    <p>
+      Função: <strong class="font-medium">{{ supervisor.role }}</strong>
+    </p>
+    <p>
+      Curso: <strong class="font-medium">{{ supervisor.course }}</strong>
+    </p>
+    <p>
+      Ano de Ingresso: <strong class="font-medium">{{ supervisor.entryperiod }}</strong>
+    </p>
   </div>
 
-  <main class="flex flex-col grow items-center justify-center p-4">
+  <main class="flex grow flex-col items-center justify-center p-4">
     <div class="flex flex-col justify-between rounded-2xl border-2 px-4 py-2">
       <h2 class="mb-2 flex justify-center text-lg font-medium">Sessão:</h2>
       <div class="mb-4 md:flex md:space-x-4">
-        <p>Lotação: <strong class="font-medium">Laboratório de Informática</strong></p>
-        <p>Turno: <strong class="font-medium">Manhã</strong></p>
-        <p>Status: <span class="rounded-md bg-red-500 px-2 pb-1 font-medium text-white">Inativo</span></p>
+        <p>
+          Lotação: <strong class="font-medium">{{ session.laboratory }}</strong>
+        </p>
+        <p>Turno: <strong class="font-medium">{{ session.shift }}</strong></p>
+        <p>Status: <span [ngClass]="statusColor" class="rounded-md px-2 pb-1 font-medium text-white">{{ statusText }}</span></p>
       </div>
-      <div class="flex justify-center mb-4">
+      <div class="mb-4 flex justify-center">
         <button class="rounded-xl bg-teal-400 px-3 py-1 font-semibold text-white shadow-sm shadow-teal-900 hover:bg-teal-500 active:bg-teal-600">Ativar Sessão</button>
       </div>
 
-      <div class="border-t max-h-80 p-4 overflow-y-scroll">
+      <div class="max-h-80 overflow-y-scroll border-t p-4">
         <div class="flex flex-col items-center">
-          <app-card-session></app-card-session>
-          <app-card-session></app-card-session>
-          <app-card-session></app-card-session>
-          <app-card-session></app-card-session>
-          <app-card-session></app-card-session>
-          <app-card-session></app-card-session>
-          <app-card-session></app-card-session>
-          <app-card-session></app-card-session>
-          <app-card-session></app-card-session>
-          <app-card-session></app-card-session>
-          <app-card-session></app-card-session>
+          <app-card-session *ngFor="let s of sessions | async" [session]="s"></app-card-session>
         </div>
       </div>
     </div>
