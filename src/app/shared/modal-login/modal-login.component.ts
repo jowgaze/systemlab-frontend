@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 import { AuthService } from './../../core/services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modal-login',
@@ -14,7 +15,7 @@ export class ModalLoginComponent implements OnInit {
   private formBuilder = inject(FormBuilder);
   protected loginForm!: FormGroup;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -27,7 +28,7 @@ export class ModalLoginComponent implements OnInit {
     const username = this.loginForm.value.username;
     const password = this.loginForm.value.password;
     this.authService.authLogin(username, password).subscribe({
-      next: () => alert("Login efetuado com sucesso"),
+      next: () => this.router.navigate(['/supervisor']),
       error: () => alert("Erro ao logar.")
     })
   }
