@@ -16,4 +16,8 @@ export class PublicService {
   public listSessions(): Observable<SessionResponse[]>{
     return this.httpClient.get<SessionResponse[]>(`${this.apiUrl}/sessions`);
   }
+
+  public listSessionBySupervisor(id: number): Observable<SessionResponse>{
+    return this.httpClient.get<SessionResponse>(`${this.apiUrl}/sessionsBySupervisor/${id}`);
+  }
 }
